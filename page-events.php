@@ -47,7 +47,7 @@
 						
 						<?php $events_list = tribe_get_events(array(
 							'orderby'		=> 'date',
-							'order'			=> 'DESC'
+							'order'			=> 'ASC'
 						)); ?>
 						<?php if (count($events_list) > 0) { ?>
 						<ul class="events-list">

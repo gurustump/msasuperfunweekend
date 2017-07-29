@@ -54,7 +54,7 @@
 						
 						<?php $events_list = tribe_get_events(array(
 							'orderby'		=> 'date',
-							'order'			=> 'DESC'
+							'order'			=> 'ASC'
 						)); ?>
 						<?php /* <pre>
 						<?php print_r($events_list); ?>
