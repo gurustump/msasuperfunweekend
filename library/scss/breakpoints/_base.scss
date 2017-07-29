@@ -433,8 +433,6 @@ POSTS & CONTENT STYLES
 	}
 }
 .hentry {
-	border-radius: 3px;
-
 	header {
 		padding-bottom:5px;
 		border-bottom:3px dotted rgba($brown, .3);
@@ -741,6 +739,40 @@ CONTACT FORM STYLES
 .wpcf7-form {
 	max-width:$fieldmaxwidth;
 	margin:0 auto;
+}
+
+/******************************************************************
+THE EVENT CALENDAR STYLES
+******************************************************************/
+#tribe-events {
+	.tribe-events-button {
+		@include btn($purple, small, lighten);
+	}
+	h1.tribe-events-single-event-title {
+		@extend .h1;
+	}
+	.tribe-events-schedule {
+		margin:0;
+		h2 {
+			font-size:18px;
+			font-family:$buttonfont;
+			font-weight:bold;
+			color:$brown;
+			text-transform:uppercase;
+			border-top:1px dotted lighten($purple, 40%);
+			border-bottom:1px dotted lighten($purple, 40%);
+		}
+	}
+	.tribe-events-tooltip {
+		h4.entry-title {
+			color:$orange;
+		}
+	}
+	.tribe-events-calendar {
+		td.mobile-active, td.mobile-active:hover, td.mobile-active div {
+			background-color:$yellow-orange;
+		}
+	}
 }
 
 /******************************************************************
@@ -1191,6 +1223,12 @@ body.home {
 				}
 			}
 		}
+	}
+}
+
+body.home, body.page-template-page-events {
+	.hentry {
+		margin-bottom:20px;
 	}
 }
 

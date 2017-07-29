@@ -18,6 +18,7 @@
 				<div id="inner-content" class="wrap cf">
 					<main id="main" class="" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<?php if ($post->post_content !== '') { ?>
 						<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 							<header class="article-header">
 								<h1 class="page-title"><?php the_title(); ?></h1>
@@ -28,7 +29,7 @@
 								?>
 							</section>
 						</article>
-
+						<?php } ?>
 						<?php endwhile; else : ?>
 
 						<article id="post-not-found" class="hentry cf">

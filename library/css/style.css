@@ -875,7 +875,7 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.btn, .btn-search, .blue-btn, .comment-reply-link, #submit {
+.btn, .btn-search, .blue-btn, .comment-reply-link, #submit, #tribe-events .tribe-events-button {
   display: inline-block;
   position: relative;
   font-family: "Roboto Condensed", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -883,8 +883,8 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
-  color: #fff;
-  font-size: 1.2em;
+  color: #fff !important;
+  font-size: 19px;
   height: 35px;
   line-height: 35px;
   padding: 0 24px;
@@ -901,11 +901,11 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   -ms-transition: background-color 0.14s ease-in-out;
   -o-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .btn:hover, .btn-search:hover, .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .btn:focus, .btn-search:focus, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
+  .btn:hover, .btn-search:hover, .blue-btn:hover, .comment-reply-link:hover, #submit:hover, #tribe-events .tribe-events-button:hover, .btn:focus, .btn-search:focus, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, #tribe-events .tribe-events-button:focus {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  .btn:active, .btn-search:active, .blue-btn:active, .comment-reply-link:active, #submit:active {
+  .btn:active, .btn-search:active, .blue-btn:active, .comment-reply-link:active, #submit:active, #tribe-events .tribe-events-button:active {
     top: 1px; }
 
 .btn, .btn-search {
@@ -919,6 +919,16 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
     background-color: #2574a8; }
   .blue-btn:active, .comment-reply-link:active, #submit:active {
     background-color: #2472a4; }
+
+.btn-large {
+  font-size: 28px;
+  height: 52px;
+  line-height: 52px; }
+
+.btn-small, #tribe-events .tribe-events-button {
+  font-size: 14px;
+  height: 28px;
+  line-height: 28px; }
 
 .btn-search {
   height: 40px;
@@ -1420,7 +1430,7 @@ a, a:visited {
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1, .h1, #tribe-events h1.tribe-events-single-event-title, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   text-rendering: optimizelegibility;
   font-weight: 700;
   font-family: "Roboto Slab", "Georgia", Cambria, Times New Roman, Times, serif;
@@ -1431,10 +1441,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	http://css-tricks.com/watch-your-font-weight/
 	*/
   /* removing text decoration from all headline links */ }
-  h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a {
+  h1 a, .h1 a, #tribe-events h1.tribe-events-single-event-title a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a {
     text-decoration: none; }
 
-h1, .h1 {
+h1, .h1, #tribe-events h1.tribe-events-single-event-title {
   font-size: 2.5em;
   line-height: 1.333em; }
 
@@ -1668,15 +1678,14 @@ POSTS & CONTENT STYLES
     margin-bottom: 20px;
     font-family: "Roboto Condensed", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-.hentry {
-  border-radius: 3px; }
-  .hentry header {
-    padding-bottom: 5px;
-    border-bottom: 3px dotted rgba(123, 46, 0, 0.3); }
-  .hentry footer {
-    border-top: 3px dotted rgba(123, 46, 0, 0.3); }
-    .hentry footer p {
-      margin: 0; }
+.hentry header {
+  padding-bottom: 5px;
+  border-bottom: 3px dotted rgba(123, 46, 0, 0.3); }
+
+.hentry footer {
+  border-top: 3px dotted rgba(123, 46, 0, 0.3); }
+  .hentry footer p {
+    margin: 0; }
 
 /* end .hentry */
 .single-title,
@@ -1847,6 +1856,31 @@ CONTACT FORM STYLES
 .wpcf7-form {
   max-width: 400px;
   margin: 0 auto; }
+
+/******************************************************************
+THE EVENT CALENDAR STYLES
+******************************************************************/
+#tribe-events .tribe-events-button {
+  background-color: #3d1d34; }
+  #tribe-events .tribe-events-button:hover {
+    background-color: #602d51; }
+
+#tribe-events .tribe-events-schedule {
+  margin: 0; }
+  #tribe-events .tribe-events-schedule h2 {
+    font-size: 18px;
+    font-family: "Roboto Condensed", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: #7b2e00;
+    text-transform: uppercase;
+    border-top: 1px dotted #b96da4;
+    border-bottom: 1px dotted #b96da4; }
+
+#tribe-events .tribe-events-tooltip h4.entry-title {
+  color: #f26522; }
+
+#tribe-events .tribe-events-calendar td.mobile-active, #tribe-events .tribe-events-calendar td.mobile-active:hover, #tribe-events .tribe-events-calendar td.mobile-active div {
+  background-color: #f7921e; }
 
 /******************************************************************
 COMMENT STYLES
@@ -2152,6 +2186,9 @@ html.scrolled body.home .trigger-nav .ic > span {
   -ms-box-shadow: 0 0 3px #fff;
   -o-box-shadow: 0 0 3px #fff;
   box-shadow: 0 0 3px #fff; }
+
+body.home .hentry, body.page-template-page-events .hentry {
+  margin-bottom: 20px; }
 
 /******************************************
 ADMIN BAR CUSTOMIZATION

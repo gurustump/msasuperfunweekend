@@ -32,8 +32,8 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 	letter-spacing:2px;
 	text-transform:uppercase;
 	text-decoration:none;
-	color:$white;
-	font-size:1.2em;
+	color:$white !important;
+	font-size:19px;
 	height:35px;
 	line-height:35px;
 	padding:0 24px;
@@ -78,7 +78,16 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 	} // end active
 
 } // end blue button
-
+.btn-large {
+	font-size:28px;
+	height:52px;
+	line-height:52px;
+}
+.btn-small {
+	font-size:14px;
+	height:28px;
+	line-height:28px;
+}
 .btn-search {
 	@extend .btn;
 	height:40px;
@@ -109,5 +118,24 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 		left:50%;
 		top:50%;
 		@include transform(rotate(45deg) translate(-5px, 8px));
+	}
+}
+@mixin btn($color,$size,$brightness) {
+	@extend %btn;
+	background-color:$color;
+	@if $brightness == 'lighten' {
+		&:hover {
+			background-color:lighten($color, 10%);
+		}
+	} @else {
+		&:hover {
+			background-color:darken($color, 10%);
+		}
+	}
+	@if $size == 'small' {
+		@extend .btn-small;
+	}
+	@if $size == 'large' {
+		@extend .btn-large
 	}
 }
