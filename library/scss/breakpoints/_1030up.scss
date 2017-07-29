@@ -1,0 +1,156 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+.wrap {
+	width:1030px;
+	@include box-sizing;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+#logo {
+	float:left;
+	width:150px;
+	a {
+		background-position:left center;
+	}
+}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+.main-nav-container {
+	float:left;
+	position:static;
+	background:none;
+	width:auto;
+	& > h5 {
+		display:none;
+	}
+}
+.main-nav {
+	border: 0;
+	overflow:visible;
+	background:none;
+	margin-right:-12px;
+	ul {
+		background:$black url(../images/bg-body.png);
+		margin-top:0;
+	}
+	& > li {
+		float: left;
+		position: relative;
+		a {
+			border-bottom: 0;
+			@include transition(background-color .5s, color .5s, height $trspeed, line-height $trspeedquick);
+			background:none;
+			font-size:18px;
+			height:120px;
+			line-height:120px;
+			padding:0 12px;
+			&:hover, &:focus {
+				text-decoration:none;
+				background-color:rgba($orange,.1);
+				color:$orange;
+			}
+		}
+		li a {
+			height:55px;
+			line-height:55px;
+		}
+		ul.sub-menu,
+		ul.children {
+			margin-top: 0;
+			border-top: 0;
+			position: absolute;
+			opacity: 0;
+			@include transition(opacity .5s);
+			height:0;
+			overflow:hidden;
+			z-index: 8999;
+			li {
+				a {
+					padding-left:10px;
+					border-right:0;
+					display:block;
+					border-top:1px solid rgba($white, .1);
+				}
+				ul {
+					top:0;
+					left:100%;
+				}
+			}
+			/* highlight sub-menu current page */
+			li.current-menu-item,
+			li.current_page_item,
+			li.current_page_ancestor {
+				a {}
+			}
+		}
+		/* showing sub-menus */
+		&:hover > ul {
+			top: auto;
+			opacity:1;
+			height:auto;
+		}
+	} /* end .menu ul li */
+	html.scrolled & {
+		& > li {
+			a {
+				height:80px;
+				line-height:80px;
+			}
+		}
+	}
+
+	/* highlight current page */
+	li.current-menu-item,
+	li.current_page_item,
+	li.current_page_ancestor {
+		a {}
+	}  /* end current highlighters */
+
+} /* end .nav */
+.trigger-nav {
+	display:none;
+}
+
+/******************************************
+INDIVIDUAL PAGES
+******************************************/
+
+/******************************************
+HOME PAGE
+******************************************/
+body.home {
+	#logo {
+		float:none;
+		width:100%;
+		position:absolute;
+		left:0;
+		top:0;
+		a {
+			background-position:center center;
+		}
+	}
+	.main-nav-container {
+		float:right;
+		opacity:0;
+		@include transition(opacity $trspeed);
+	}
+	html.scrolled & {
+		.main-nav-container {
+			opacity:1;
+		}
+	}
+}

@@ -1,0 +1,113 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Button Styles
+
+Buttons are a pretty important part of your site's style, so it's
+important to have a consistent baseline for them. Use this stylesheet
+to create all kinds of buttons.
+
+Helpful Links:
+http://galp.in/blog/2011/08/02/the-ui-guide-part-1-buttons/
+
+******************************************************************/
+
+/*********************
+BUTTON DEFAULTS
+We're gonna use a placeholder selector here
+so we can use common styles. We then use this
+to load up the defaults in all our buttons.
+
+Here's a quick video to show how it works:
+http://www.youtube.com/watch?v=hwdVpKiJzac
+
+*********************/
+
+%btn {
+	display: inline-block;
+	position: relative;
+	font-family:$buttonfont;
+	font-weight:bold;
+	letter-spacing:2px;
+	text-transform:uppercase;
+	text-decoration:none;
+	color:$white;
+	font-size:1.2em;
+	height:35px;
+	line-height:35px;
+	padding:0 24px;
+	border-radius: 4px;
+	border: 0;
+	cursor: pointer;
+	@include border-radius(30px);
+	@include transition(background-color 0.14s ease-in-out);
+
+	// hovering on the btn
+	&:hover, &:focus {
+		color:$white;
+		text-decoration:none;
+		outline:none;
+	} // end hover
+
+	// clicking on the button
+	&:active {
+		top: 1px; // adds a tiny hop to the click
+	} // end active
+
+} // end .button
+
+.btn {
+	@extend %btn;
+	background-color:$orange;
+	&:hover {
+		background-color:darken($orange, 10%);
+	}
+}
+.blue-btn {
+	@extend %btn; // here we load the btn defaults
+	background-color: $blue;
+
+	&:hover,
+	&:focus {
+		background-color:darken($blue, 4%);
+	} // end hover
+
+	&:active {
+		background-color: darken($blue, 5%);
+	} // end active
+
+} // end blue button
+
+.btn-search {
+	@extend .btn;
+	height:40px;
+	line-height:40px;
+	position:absolute;
+	right:0;
+	top:0;
+	@include border-radius(0);
+	text-indent:-9999px;
+	&:before, &:after {
+		content:"";
+	}
+	&:before {
+		height:12px;
+		width:12px;
+		border:3px solid white;
+		@include border-radius(50%);
+		position:absolute;
+		left:50%;
+		top:50%;
+		@include transform(translate(-7px, -12px));
+	}
+	&:after {
+		width:3px;
+		height:10px;
+		background:white;
+		position:absolute;
+		left:50%;
+		top:50%;
+		@include transform(rotate(45deg) translate(-5px, 8px));
+	}
+}
