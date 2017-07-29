@@ -185,17 +185,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 h1, .h1 {
 	font-size: 2.5em;
-	line-height: 1.333em;
+	line-height: 1.1em;
 }
 
 h2, .h2 {
 	font-size:2em;
-	line-height:1.4em;
+	line-height:1.1em;
 	margin-bottom:0.375em;
 }
 
 h3, .h3 {
 	font-size:1.75em;
+	line-height:1.1em;
 }
 
 h4, .h4 {
@@ -410,7 +411,7 @@ POSTS & CONTENT STYLES
 	& > li {
 		margin-bottom:30px;
 		h3 {
-			margin-bottom:0;
+			margin-bottom:5px;
 			a {
 				border-bottom:0;
 			}
@@ -424,6 +425,7 @@ POSTS & CONTENT STYLES
 			color:$brown;
 			font-family:$buttonfont;
 			padding:3px 0 2px;
+			margin-bottom:3px;
 		}
 		.event-venue {
 			font-size:13px;
@@ -750,8 +752,12 @@ THE EVENT CALENDAR STYLES
 	}
 	h1.tribe-events-single-event-title {
 		@extend .h1;
+		margin-bottom:5px;
 	}
 	.tribe-events-schedule {
+		background:none;
+		border:0;
+		padding:0;
 		margin:0;
 		h2 {
 			font-size:18px;
@@ -761,6 +767,7 @@ THE EVENT CALENDAR STYLES
 			text-transform:uppercase;
 			border-top:1px dotted lighten($purple, 40%);
 			border-bottom:1px dotted lighten($purple, 40%);
+			padding:4px 0;
 		}
 	}
 	.tribe-events-tooltip {
