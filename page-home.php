@@ -60,7 +60,7 @@
 						<?php print_r($events_list); ?>
 						</pre> */ ?>
 						<?php if (count($events_list) > 0) { ?>
-						<h2>Superfun Events</h2>
+						<h2 class="h1 section-heading">Superfun Events</h2>
 						<ul class="events-list">
 							<?php foreach($events_list as $event) { ?>
 							<li>

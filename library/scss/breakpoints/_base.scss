@@ -220,7 +220,7 @@ HEADER STYLES
 	z-index:8999;
 	@include transition(background-color $trspeed, height $trspeed);
 	html.scrolled body & {
-		background-color:rgba($white, .9);
+		background-color:rgba($white, .98);
 		height:80px;
 		@include box-shadow(0 2px 5px rgba($black, .1));
 	}
@@ -401,7 +401,37 @@ NAVIGATION STYLES
 POSTS & CONTENT STYLES
 *********************/
 
-
+.section-heading {
+	text-align:center;
+	padding-bottom:5px;
+	border-bottom:3px dotted rgba($brown, .3);
+}
+.events-list {
+	& > li {
+		margin-bottom:30px;
+		h3 {
+			margin-bottom:0;
+			a {
+				border-bottom:0;
+			}
+		}
+		.event-date {
+			border-top:1px dotted lighten($purple, 40%);
+			border-bottom:1px dotted lighten($purple, 40%);
+			text-transform:uppercase;
+			font-size:14px;
+			font-weight:bold;
+			color:$brown;
+			font-family:$buttonfont;
+			padding:3px 0 2px;
+		}
+		.event-venue {
+			font-size:13px;
+			margin-bottom:20px;
+			font-family:$buttonfont;
+		}
+	}
+}
 .hentry {
 	border-radius: 3px;
 
