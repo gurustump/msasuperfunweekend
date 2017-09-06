@@ -1859,6 +1859,9 @@ CONTACT FORM STYLES
   max-width: 400px;
   margin: 0 auto; }
 
+.wpcf7-recaptcha-container {
+  margin-bottom: 20px; }
+
 /******************************************************************
 THE EVENT CALENDAR STYLES
 ******************************************************************/
